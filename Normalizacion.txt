@@ -1,0 +1,48 @@
+Libro(**#codigo_libro**, titulo, {autor, editorial, lector}, fecha_devolucion)
+
+NORMALIZACIÓN
+
+1FN:
+
+​		Libro(**#codigo_libro**, titulo, *codigo_autor, codigo_editorial, codigo_lector*, fecha_devolucion)
+
+​		Autor(**#codigo_autor**, nombre_autor, apellido_autor)
+
+​		Editorial(**#codigo_editorial**, nombre_editorial)
+
+​		Lector(**#codigo_lector**, nombre_lector, apellido_lector)
+
+
+
+2FN:
+
+​		Libro(**#codigo_libro**, titulo, *codigo_autor*)
+
+​		Ejemplar(**#codigo_ejemplar**, *codigo_libro, codigo_editorial*)
+
+​		Arriendo(**#fecha_inicio, *#codigo_ejemplar, #codigo_lector***, fecha_devolucion)
+
+​		Autor(**#codigo_autor**, nombre_autor, apellido_autor)
+
+​		Editorial(**#codigo_editorial**, nombre_editorial)
+
+​		Lector(**#codigo_lector**, nombre_lector, apellido_lector)
+
+
+
+3FN:
+
+​		Libro(**#codigo_libro**, titulo)
+
+​		Libro_Autor(*codigo_libro, codigo_autor*)
+
+​		Ejemplar(**#codigo_ejemplar**, *codigo_libro, codigo_editorial*)
+
+​		Arriendo(**#fecha_inicio, *#codigo_ejemplar, #codigo_lector***, fecha_devolucion)
+
+​		Autor(**#codigo_autor**, nombre_autor, apellido_autor)
+
+​		Editorial(**#codigo_editorial**, nombre_editorial)
+
+​		Lector(**#codigo_lector**, nombre_lector, apellido_lector)
+
